@@ -1,9 +1,10 @@
 # Load required libraries
-install.packages("tidyverse")  # Only run this once
 library(tidyverse)
+library(tidytext)
+library(readr)  # For reading .txt files
 
-# Sample text (you can replace this with a legal clause)
-text <- "Ambiguity in legal discourse often arises from modal verbs and vague phrasing."
+# Sample text
+text <- read_file("data/Ley48_text.txt")
 
 # Convert to tibble and tokenize
 df <- tibble(line = 1, text = text) %>%
